@@ -1,27 +1,9 @@
 import React from "react";
-import Sunny from "../assets/Sunny.svg"
-import Cloudy from "../assets/Cloudy.svg"
-import Rainy from "../assets/Rainy.svg"
-import PartlyCloudy from "../assets/PartlyCloudy.svg"
+import { getWeatherIcon } from "./GetWeatherIcon";
 
 
 function WeatherCard({cities}) {
-  let image;
-  switch(cities.forecast){
-    case "Sunny" :
-      image = Sunny
-      break;
-    case "Cloudy" :
-      image = Cloudy
-      break; 
-    case "Rainy" :
-      image = Rainy
-      break;
-    case "Partly cloudy" :
-      image = PartlyCloudy
-      break; 
-
-  }
+  const image = getWeatherIcon(cities.forecast)
 
   return (
     <div className = "card">

@@ -1,8 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
 const WeatherCard = require('./components/WeatherCard');
+const Location = require('./components/Location')
 const cities = require('./data')
 
 function App() {
+    const [location, setLocation] = useState("New York City")
+
     return (
         <>
             <h1 className = "title">REACTIVE WEATHER</h1>
